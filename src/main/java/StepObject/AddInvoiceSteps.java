@@ -3,7 +3,6 @@ import PageObject.AddInvoicePage;
 import io.qameta.allure.Step;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sleep;
-
 public class AddInvoiceSteps extends AddInvoicePage {
     @Step("Click add invoice button")
     public AddInvoiceSteps AddInvoiceBtn() {
@@ -50,7 +49,6 @@ public class AddInvoiceSteps extends AddInvoicePage {
     public AddInvoiceSteps OpenFinancePage() {
         sleep(5000);
         open("https://dev.ram.syniotec.com/clients/detail/ecfdbf25-978d-46d8-acbe-d3ce5508a022/finances");
-
         return this;
     }
 @Step("Sort invoice table by date")

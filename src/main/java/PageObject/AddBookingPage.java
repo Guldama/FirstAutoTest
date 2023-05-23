@@ -1,12 +1,9 @@
 package PageObject;
-
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-
 public class AddBookingPage {
     public SelenideElement
             bookingQuantity = $(byClassName("bookings-header__leftside-count")),
@@ -18,16 +15,9 @@ public class AddBookingPage {
             submitBookingBtn = $(byClassName("shl-button-content-container-value"),3),
             backToRentalBtn = $(byClassName("header__actions-back")),
             openBookingDrawer = $(byId("Group_10668")),
-
            bookingOverlapError = $(byText("Booking overlap")),
-
           submitForDelete = $(byClassName("btn-primary")),
             clickSubmit = $(byText("Submit"));
-
-
-
-
-
     public ElementsCollection
             addBookingQuantity = $$(byTagName("sm-equipment-card")),
             bookingItemsDelete = $$(byClassName("booking-item__top-info-delete"));

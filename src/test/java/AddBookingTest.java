@@ -4,16 +4,15 @@ import Utils.ChromeRunner;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import static com.codeborne.selenide.Selenide.sleep;
-
 public class AddBookingTest extends ChromeRunner {
     AddBookingSteps addBookingSteps = new AddBookingSteps();
     LoginPageSteps loginPageSteps = new LoginPageSteps();
     SoftAssert soft = new SoftAssert();
-
     @Test
     @Description("Add available equipment bookings to the rental")
     @Severity(SeverityLevel.CRITICAL)
@@ -39,7 +38,6 @@ public class AddBookingTest extends ChromeRunner {
         int addedProductQuantity = 5;
         soft.assertEquals(addedProductQuantity + initialCount, lastQuantity, "Bookings Increased");
         soft.assertAll();
-
     }
     @Test
     @Description("Check error messages for overlap")
@@ -62,10 +60,8 @@ public class AddBookingTest extends ChromeRunner {
         int lastQuantity = a.split(bookingQuantity2);
         soft.assertEquals(initialCount, lastQuantity, "Booking quantity is not changed");
         soft.assertAll();
-
     }
-
-    @Test
+    @AfterClass
     @Description("Delete all bookings")
     @Severity(SeverityLevel.NORMAL)
     public void DeleteAllBookings(){

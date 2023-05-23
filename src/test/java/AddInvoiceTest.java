@@ -7,16 +7,12 @@ import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import static DataObject.AddInvoiceData.*;
 import static com.codeborne.selenide.Selenide.sleep;
-
 public class AddInvoiceTest extends ChromeRunner {
-
     AddInvoiceSteps addInvoiceSteps = new AddInvoiceSteps();
     LoginPageSteps loginPageSteps = new LoginPageSteps();
     SoftAssert soft = new SoftAssert();
-
     @Test
     @Description("Creating invoice with unique invoice name")
     @Severity(SeverityLevel.NORMAL)
@@ -40,9 +36,8 @@ public class AddInvoiceTest extends ChromeRunner {
         addInvoiceSteps.InvoiceUpdateBtn();
         soft.assertAll();
     }
-
     @Test
-    @Description("Edit invoice and attach a file")
+    @Description("Edit invoice and check error message")
     @Severity(SeverityLevel.NORMAL)
     public void InvoiceNumValidation() {
         loginPageSteps.SuccessfullLogin();

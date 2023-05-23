@@ -1,10 +1,8 @@
 package StepObject;
 import PageObject.LoginPage;
-import com.codeborne.selenide.Condition;
+igit mport com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
-
 import java.time.Duration;
-
 import static DataObject.LoginPageData.*;
 public class LoginPageSteps extends LoginPage {
     @Step("Fill mail input: {email}")
@@ -17,7 +15,7 @@ public class LoginPageSteps extends LoginPage {
         passwordInput.setValue(password);
         return this;
     }
-@Step("Click on remember me check box")
+   @Step("Click on remember me check box")
     public LoginPageSteps RememberMe (){
         remembermeCheckBox.click();
         return this;

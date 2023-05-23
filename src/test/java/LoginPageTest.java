@@ -9,10 +9,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import static DataObject.LoginPageData.*;
 import static com.codeborne.selenide.Selenide.sleep;
-
 public class LoginPageTest extends ChromeRunner {
     LoginPageSteps loginPageSteps = new LoginPageSteps();
-
     @Test
     @Description("Login test with correct credentials")
     @Severity(SeverityLevel.BLOCKER)
@@ -23,7 +21,6 @@ public class LoginPageTest extends ChromeRunner {
         Assert.assertFalse(loginPageSteps.loginErrorFormail.is(Condition.visible),"E-mail error validation");
         Assert.assertFalse(loginPageSteps.loginErrorforbtn.is(Condition.visible), "Login error validation");
     }
-
     @Test
     @Description("Login test with empty inputs")
     @Severity(SeverityLevel.BLOCKER)
